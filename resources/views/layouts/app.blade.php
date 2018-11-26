@@ -16,6 +16,9 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -56,7 +59,7 @@
 
 
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ Auth::user()->username }} <span class="caret"></span>
                             </a>
 
 
@@ -79,7 +82,7 @@
 
     </nav>
   </div>
-      <div class="container">
+      <div class="container flex-center">
 
         <main class="py-4 page">
             @yield('content')
