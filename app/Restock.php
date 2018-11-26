@@ -3,16 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Carbon\Carbon;
 
-class Inventory extends Model
+class Restock extends Model
 {
-  public function user() {
+  public function userRestock() {
       return $this->belongsTo('App\User');
   }
-
-
-
-
-    
 }

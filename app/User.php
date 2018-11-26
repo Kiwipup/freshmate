@@ -31,4 +31,8 @@ class User extends Authenticatable
     public function items() {
         return $this->hasMany('App\Inventory');
     }
+
+    public function restocks() {
+        return $this->hasMany('App\Restock');
+    }
 }

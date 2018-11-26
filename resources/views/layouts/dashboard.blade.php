@@ -4,17 +4,17 @@
 <div class="col-12">
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-top border-bottom border-secondary">
+    <nav id="dashboard-nav" class="navbar navbar-expand-lg rounded-top border-bottom border-secondary">
 
-    <ul id="dashboard-nav" class="list-inline">
+    <ul class="list-inline">
       <li class="list-inline-item nav-item">
-        <a class="nav-link" href="/pantry">Inventory</a>
+        <a class="inner-nav nav-link" href="/pantry">Inventory</a>
       </li>
       <li class="list-inline-item nav-item">
-        <a class="nav-link" href="#">Restock</a>
+        <a class="inner-nav nav-link" href="/restock">Restock</a>
       </li>
       <li class="list-inline-item nav-item">
-        <a class="nav-link" href="#">Your Recipes</a>
+        <a class="inner-nav nav-link" href="#">Your Recipes</a>
       </li>
     </ul>
 

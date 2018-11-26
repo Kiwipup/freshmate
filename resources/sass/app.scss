@@ -18,9 +18,11 @@
   width:100%;
 }
 
+
 .navbar-brand, .nav-link {
 
-  color: pink !important;
+
+  color: rgba(170,202,151,1) !important;
   letter-spacing: .1rem;
   text-decoration: none;
 
@@ -29,7 +31,7 @@
 #nav.shrink {
     height: 60px;
     transition: all ease .5s;
-    background: rgba(170,202,151,.7);
+    background: #314F40;
 
     }
 
@@ -44,6 +46,9 @@ z-index: 99999;
 transition: all ease .5s;
 }
 
+.card-header, .card-body, .card-footer {
+  color: #314F40 !important;
+}
 body.pretty {
   /* The image used */
   background: url("http://3.bp.blogspot.com/-y3k9nLOiUrg/UkUpx8kclzI/AAAAAAAADgs/YrWctVO3vmE/s1600/DSC_1975.JPG");
@@ -63,16 +68,29 @@ body.pretty {
 
 }
 
-.navbar-brand, .nav-link {
+body.pretty2 {
+  /* The image used */
+  background: url("http://tifannyfrench.info/wp-content/uploads/2018/09/kitchen-table-background-with-stock-photo-counter-top-blurred-pantry.jpg");
 
-  color: #FFC03F !important;
-  letter-spacing: .1rem;
-  text-decoration: none;
+  height: 100%;
+  max-width: 100%;
+  /*height: 347px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;*/
+
+ background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FEAD77;
+
 
 }
 
+
 .links > a {
-    color: #FFC03F;
+    color: rgba(170,202,151,1) !important;
     padding: 0 25px;
     font-size: 13px;
     font-weight: 600;
@@ -87,6 +105,8 @@ body.pretty {
     justify-content: center;
 }
 
+
+
 .position-ref {
     position: relative;
 }
@@ -99,8 +119,37 @@ body.pretty {
 
 .title {
     font-size: 84px;
-    color: #AACA97;
+    color: #314F40;
     margin-top: 200px;
+    background: rgba(170,202,151,.9);
 
 
+}
+
+.border-success, .border-danger {
+
+  border-width: 3px !important;
+}
+
+
+
+#dashboard-nav, #addForm, #addFormTwo, .empty {
+  background: rgba(163,105,95,.8);
+  font-weight: bold;
+
+}
+
+
+
+.card-header {
+  font-weight: bold;
+}
+
+.btn {
+  background: $darkgreen;
+  color: $green;
+}
+
+button:focus {
+  outline: 0;
 }

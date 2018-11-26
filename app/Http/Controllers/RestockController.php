@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class InventoryController extends Controller
+class RestockController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class InventoryController extends Controller
      */
     public function index()
     {
-      return view('pantry.index');
+        return view('restock.index');
     }
 
     /**
@@ -34,19 +34,18 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
-      $items = new \App\Inventory;
-      $items->user_id = \Auth::id();
-      $items->item = $request->input('item_name');
-      $items->description = $request->input('item_description');
-      $items->expiration_date = $request->input('expiration');
-      $items->quantity = $request->input('amount');
-      $items->save();
+      $restock_items = new \App\Restock;
+      $restock_items->user_id = \Auth::id();
+      $restock_items->item_name = $request->input('item_name');
+      $restock_items->description = $request->input('item_description');
+      $restock_items->amount = $request->input('quantity');
+      $restock_items->save();
 
       // messaging
-        $request->session()->flash('status', 'Added New Item to Inventory');
+        $request->session()->flash('status', 'Added New Item to Restock list');
 
         // redirect
-        return redirect()->route('pantry.index');
+        return redirect()->route('restock.index');
     }
 
     /**
@@ -89,17 +88,8 @@ class InventoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
+    public function destroy($id)
     {
-
-      $item = \App\Inventory::find($id);
-      // Delete the inventory item
-        $item->delete();
-
-        // messaging
-        $request->session()->flash('status', 'Item removed from Inventory!');
-
-        // redirect
-        return redirect()->route('pantry.index');
+        //
     }
 }

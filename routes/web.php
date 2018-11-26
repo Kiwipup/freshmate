@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('pantry', 'InventoryController')->middleware('auth');
+Route::resource('restock', 'RestockController')->middleware('auth');

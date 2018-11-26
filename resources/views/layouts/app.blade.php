@@ -23,7 +23,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
-<body>
+<body class="pretty2 bg-primary">
     <div id="app">
   <div id="nav" class="shrink flex-center full-height">
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">

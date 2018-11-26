@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <a href="/inventory">Go to your Dashboard</a>
+                    <a href="/pantry">Go to your Dashboard</a>
                 </div>
             </div>
         </div>
