@@ -30,7 +30,7 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 Home
             </a>
-            <a class="nav-link" href="/primary-views">Dashboard</a>
+            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -82,7 +82,7 @@
 
     </nav>
   </div>
-      <div class="container flex-center">
+      <div class="container flex-center @yield('class')">
 
         <main class="py-4 page">
             @yield('content')

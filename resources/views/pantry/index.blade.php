@@ -1,6 +1,5 @@
 @extends('layouts.dashboard')
 
-
 @section('dashcontent')
 <div class="d-flex justify-content-center">
 <div class="col-8">
@@ -58,7 +57,7 @@
           </div>
           <div class="card-footer bg-transparent">
             {!! $item->expiration_date ? "Expires: " . $item->expiration_date : '<span class="text-black-50">(No Expiration Date)</span>' !!}
-            Quantity: {{$item->quantity}}
+            <p>Quantity: {{$item->quantity}}</p>
           </div>
         </div>
 
