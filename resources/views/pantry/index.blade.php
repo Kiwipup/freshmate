@@ -42,11 +42,13 @@
 
 
         <div class="col-3 card ml-3 mt-3 border {$item->expiration_date ? border-success : border-danger}">
+
           <form action="/pantry/{{ $item->id }}" method="POST">
               @csrf
               @method('DELETE')
               <button class="btn bg-transparent float-right" type="submit"><i class="text-danger fas fa-trash-alt"></i></button>
           </form>
+          <a class="btn btn-success mb-2" href="">Add to Restock List <i class="fas fa-check"></i></a>
             <div class="card-header {$item->expiration_date ? bg-success : bg-danger}">
 
             {{$item->item}}
