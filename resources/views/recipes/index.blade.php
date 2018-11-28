@@ -29,10 +29,15 @@
             <label for="recipe_description" class="font-weight-bold">Recipe Description</label>
             <textarea type="text" class="form-control" id="recipe_description" name="description" placeholder="About this recipe..." ></textarea>
         </div>
-        <div class="form-group">
-            <label for="ingredients" class="font-weight-bold">Ingredients</label>
-            <textarea type="text" class="form-control" name="ingredients" id="ingredients"></textarea>
-        </div>
+        <div class="form-group multiple-form-group" data-max=50>
+				<label>Ingredients</label>
+
+				<div class="form-group input-group" id="ingredients">
+					<input type="text" name="ingredients[]" class="form-control">
+						<span class="input-group-btn"><button type="button" class="btn btn-default btn-add">+
+						</button></span>
+				</div>
+			</div>
         <div class="form-group">
             <label for="instructions" class="font-weight-bold">Instructions</label>
             <textarea type="text" class="form-control" name="instructions" id="instructions"></textarea>

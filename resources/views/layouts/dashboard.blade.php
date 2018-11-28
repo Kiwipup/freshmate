@@ -16,6 +16,9 @@
       <li class="list-inline-item nav-item">
         <a class="inner-nav nav-link" href="/recipes">Your Recipes</a>
       </li>
+      <li class="list-inline-item nav-item">
+        <a class="inner-nav nav-link" href="/pantry/suggestions">Recipe Suggestions</a>
+      </li>
     </ul>
 
 </nav>
