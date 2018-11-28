@@ -41,16 +41,21 @@
             <div class="container text-center">
 
 
-              <div class="title">
+              <div class="title flex-center">
+                <div class="col-6">
                   FreshMate
+                </div>
               </div>
-              <div class="title-icon">
-                <i class="fas fa-arrow-circle-down"></i>
+              <div class="title-icon flex-center">
+                <div class="col-3">
+                <h3 class="bg-success">Browse our recipes</h3>
+                <a href="#publicRecipes" ><i class="fas fa-arrow-circle-down"></i></a>
+              </div>
               </div>
 
 
 
-              <div class="py-4 page">
+              <div id="publicRecipes" class="py-4 page">
                 <div class="col-12">
                 <div class="text-left">
                   <div class="row mt-4 flex-center">
@@ -58,7 +63,7 @@
 
 
                           <div class="col-5 card ml-3 mt-3">
-                            <img class="card-img-top mt-2" src="{{$recipe->image}}" alt="Card image cap">
+                            <a href="/recipes/{{$recipe->id}}"><img class="card-img-top mt-2" src="{{$recipe->image}}" alt="Card image cap">
 
 
                               <div class="card-header">
@@ -67,7 +72,7 @@
                             </div>
                               <div class="card-body text-truncate">
                               {!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
-                            </div>
+                            </div></a>
                             <div class="card-footer bg-transparent">
                               <p>By {{$recipe->author}}</p>
                             </div>

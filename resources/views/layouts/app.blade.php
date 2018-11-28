@@ -64,7 +64,7 @@
 
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="primary-views/accountinfo">Account</a>
+                              <a class="dropdown-item" href="{{ url('pantry') }}">My Dashboard</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
@@ -82,8 +82,8 @@
 
     </nav>
   </div>
-      <div class="container flex-center @yield('class')">
-
+      <div class="container flex-center">
+          @yield('showcontent')
         <main class="py-4 page">
             @yield('content')
         </main>

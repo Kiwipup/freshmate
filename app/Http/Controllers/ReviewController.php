@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RecipeController extends Controller
+class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-      return view('recipes.index');
-
+        //
     }
 
     /**
@@ -24,8 +23,7 @@ class RecipeController extends Controller
      */
     public function create()
     {
-      return view('recipes.create');
-
+        //
     }
 
     /**
@@ -36,29 +34,7 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-
-      $validatedData = $request->validate([
-            'image' => 'required|max:250|url',
-            'description' => 'required|max:500',
-        ]);
-
-      $recipes = new \App\Recipe;
-      $recipes->user_id = \Auth::id();
-      $recipes->title = $request->input('title');
-      $recipes->author = \Auth::user()->username;
-      $recipes->prep_time = $request->input('prep_time');
-      $recipes->cook_time = $request->input('cook_time');
-      $recipes->image = $request->input('image');
-      $recipes->description = $request->input('description');
-      $recipes->ingredients = $request->input('ingredients');
-      $recipes->instructions = $request->input('instructions');
-      $recipes->save();
-
-      // messaging
-        $request->session()->flash('status', 'Your recipe was added successfully!');
-
-        // redirect
-        return redirect()->route('recipes.index');
+        //
     }
 
     /**
@@ -69,8 +45,7 @@ class RecipeController extends Controller
      */
     public function show($id)
     {
-        $recipe = \App\Recipe::find($id);
-        return view('recipes.show', compact('recipe'));
+        //
     }
 
     /**

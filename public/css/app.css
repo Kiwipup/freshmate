@@ -10583,7 +10583,12 @@ body.pretty2 {
   margin-top: 100px;
 }
 
-.title-icon {
+#addIngredient {
+  margin-top: 115px;
+}
+
+.title-icon,
+.title-icon > div > a {
   font-size: 84px;
   margin-top: 100px;
   color: #314F40;
@@ -10618,5 +10623,15 @@ body.pretty2 {
 
 button:focus {
   outline: 0;
+}
+
+#recipeShow,
+#recipeLayout {
+  min-width: 100%;
+}
+
+#addButton {
+  font-size: 25px;
+  background: transparent !important;
 }
 

@@ -76,7 +76,7 @@
 
 
         <div class="col-5 card ml-3 mt-3">
-          <img class="card-img-top mt-2" src="{{$recipe->image}}" alt="Card image cap">
+          <a href="/recipes/{{$recipe->id}}"><img class="card-img-top mt-2" src="{{$recipe->image}}" alt="Card image cap">
 
 
             <div class="card-header">
@@ -85,7 +85,7 @@
           </div>
             <div class="card-body text-truncate">
             {!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
-          </div>
+          </div></a>
           <div class="card-footer bg-transparent">
             <p>Last Updated: {{$recipe-> updated_at}}</p>
           </div>
