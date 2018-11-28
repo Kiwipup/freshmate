@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
@@ -43,12 +44,48 @@
               <div class="title">
                   FreshMate
               </div>
+              <div class="title-icon">
+                <i class="fas fa-arrow-circle-down"></i>
+              </div>
 
 
-              <div class="page">
 
+              <div class="py-4 page">
+                <div class="col-12">
+                <div class="text-left">
+                  <div class="row mt-4 flex-center">
+                  @foreach (Auth::user()->recipes as $recipe)
+
+
+                          <div class="col-5 card ml-3 mt-3">
+                            <img class="card-img-top mt-2" src="{{$recipe->image}}" alt="Card image cap">
+
+
+                              <div class="card-header">
+
+                              {{$recipe->title}}
+                            </div>
+                              <div class="card-body text-truncate">
+                              {!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
+                            </div>
+                            <div class="card-footer bg-transparent">
+                              <p>By {{$recipe->author}}</p>
+                            </div>
+                          </div>
+
+
+
+
+
+
+
+
+                  @endforeach
+                </div>
               </div>
             </div>
+            </div>
+          </div>
 
 
 

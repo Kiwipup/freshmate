@@ -10577,6 +10577,18 @@ body.pretty2 {
   background: rgba(170, 202, 151, 0.9);
 }
 
+#myModal,
+#restockModal,
+#pantryModal {
+  margin-top: 100px;
+}
+
+.title-icon {
+  font-size: 84px;
+  margin-top: 100px;
+  color: #314F40;
+}
+
 .border-success,
 .border-danger {
   border-width: 3px !important;
@@ -10589,6 +10601,10 @@ body.pretty2 {
 .empty {
   background: rgba(163, 105, 95, 0.8);
   font-weight: bold;
+}
+
+#dashboard-nav {
+  height: 60px;
 }
 
 .card-header {

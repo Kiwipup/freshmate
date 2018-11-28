@@ -12,12 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+$recipes = DB::table('recipes')->orderBy('title', 'ascending')->get();
+return view('welcome', compact('recipes'));
 });
+
 Route::get('/pantry/suggestions', function () {
   $recipes = DB::table('recipes')->orderBy('updated_at', 'desc')->get();
-  $items = DB::table('inventories')->select('item')->get();
-  return view('/pantry/suggestions', compact('recipes', 'items'));
+  $ingredients = DB::table('recipes')->select('ingredients')->get();
+  $ingredients->toArray();
+  $items = DB::table('inventories')->select('item')->where('user_id', \Auth::id())->get()->all();
+  return view('/pantry/suggestions', compact('recipes', 'ingredients', 'items'));
 });
 
 Auth::routes();
@@ -27,5 +31,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/recipes/suggestions', 'SuggestionsController@suggestions')->middleware('auth');
 
 Route::resource('pantry', 'InventoryController')->middleware('auth');
+Route::resource('/restock/index', 'RestockController');
+Route::resource('/pantry/index', 'InventoryController');
 Route::resource('restock', 'RestockController')->middleware('auth');
 Route::resource('recipes', 'RecipeController')->middleware('auth');

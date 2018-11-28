@@ -19,7 +19,7 @@ class CreateRecipesTable extends Migration
           $table->string('author');
           $table->foreign('author')->references('username')->on('users');
           $table->string('image', 250);
-          $table->string('description', 250);
+          $table->string('description', 500);
           $table->string('prep_time', 10);
           $table->string('cook_time', 10);
           $table->json('ingredients');

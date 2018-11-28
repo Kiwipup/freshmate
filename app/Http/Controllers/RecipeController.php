@@ -38,8 +38,8 @@ class RecipeController extends Controller
     {
 
       $validatedData = $request->validate([
-            'image' => 'required|max:250|url'
-
+            'image' => 'required|max:250|url',
+            'description' => 'required|max:500',
         ]);
 
       $recipes = new \App\Recipe;

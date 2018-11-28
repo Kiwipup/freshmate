@@ -3,7 +3,9 @@
 @section('dashcontent')
 @foreach ($recipes as $recipe)
 
-@if (Auth::user()->$items == $recipe->ingredients)
+
+@foreach($items as $item)
+@if ($item == $ingredients)
 <div class="row mt-4 flex-center">
 
         <div class="col-3 card ml-3 mt-3">
@@ -26,15 +28,15 @@
 
 
             <div class="empty text-center p-2 font-weight-light">
-                <p class="pt-4">Your inventory is empty...</p>
-                <p >Click the "Add Item" button to get started!</p>
+                <p class="pt-4">We could not find any recipes with ingredients matching items in your inventory at this time. :(</p>
+
             </div>
 
             @endif
 
 
 
-
+@endforeach
 
 
 @endforeach
