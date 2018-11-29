@@ -1,8 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('nav-link')
-<a class="nav-link" href="/pantry">Dashboard</a>
-@endsection
+
 
 @section('dashcontent')
 <div class="d-flex justify-content-center">

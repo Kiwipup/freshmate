@@ -42,12 +42,12 @@
 
 
               <div class="title flex-center">
-                <div class="col-6">
+                <div class="col-lg-6 col-md-12 col-sm-12">
                   FreshMate
                 </div>
               </div>
               <div class="title-icon flex-center">
-                <div class="col-3">
+                <div class="col-lg-3 col-md-5 col-sm-12">
                 <h3 class="bg-success">Browse our recipes</h3>
                 <a href="#publicRecipes" ><i class="fas fa-arrow-circle-down"></i></a>
               </div>
@@ -62,7 +62,7 @@
                   @foreach (Auth::user()->recipes as $recipe)
 
 
-                          <div class="col-5 card ml-3 mt-3">
+                          <div class="col-lg-5 col-md-5 col-sm-12 card ml-3 mt-3">
                             <a href="/recipes/{{$recipe->id}}"><img class="card-img-top mt-2" src="{{$recipe->image}}" alt="Card image cap">
 
 

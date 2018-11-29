@@ -40,7 +40,7 @@
   @foreach (Auth::user()->items as $item)
 
 
-        <div class="col-3 card ml-3 mt-3 border {$item->expiration_date ? border-success : border-danger}">
+        <div class="col-lg-3 col-md-5 col-sm-12 card ml-3 mt-3 border {$item->expiration_date ? border-success : border-danger}">
 
           <form action="/pantry/{{ $item->id }}" method="POST">
               @csrf
@@ -63,7 +63,7 @@
               @csrf
               <div class="form-group">
                   <label for="item_name" class="font-weight-bold">Item Name</label>
-                  <input type="text" class="form-control" id="restock_name" name="item_name" value="{{$item->item}}">
+                  <input type="text" class="form-control" id="modal_item_name" name="item_name" value="">
               </div>
               <div class="form-group">
                   <label for="item_description" class="font-weight-bold">Item Description (optional)</label>
@@ -84,10 +84,11 @@
 
     </div>
   </div>
-            <div class="card-header {$item->expiration_date ? bg-success : bg-danger}">
+            <div id="card_item_name" class="card-header {$item->expiration_date ? bg-success : bg-danger}">
 
             {{$item->item}}
           </div>
+
             <div class="card-body">
             {!! $item->description ? $item->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
           </div>

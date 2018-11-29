@@ -70,6 +70,8 @@ class RecipeController extends Controller
     public function show($id)
     {
         $recipe = \App\Recipe::find($id);
+
+
         return view('recipes.show', compact('recipe'));
     }
 

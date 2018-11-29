@@ -28,10 +28,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('/recipes/suggestions', 'SuggestionsController@suggestions')->middleware('auth');
 
+//Route::get('/recipes/suggestions', 'SuggestionsController@suggestions')->middleware('auth');
 Route::resource('pantry', 'InventoryController')->middleware('auth');
-Route::resource('/restock/index', 'RestockController');
-Route::resource('/pantry/index', 'InventoryController');
+Route::resource('/restock/index', 'RestockController')->middleware('auth');
+Route::resource('/pantry/index', 'InventoryController')->middleware('auth');
 Route::resource('restock', 'RestockController')->middleware('auth');
 Route::resource('recipes', 'RecipeController')->middleware('auth');
+Route::resource('recipes/{recipe}/reviews', 'ReviewController')->middleware('auth');

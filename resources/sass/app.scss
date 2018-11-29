@@ -118,14 +118,9 @@ body.pretty2 {
     top: 18px;
 }
 
-.title{
-    font-size: 84px;
-    color: #314F40;
-    margin-top: 200px;
-    background: rgba(170,202,151,.9);
-}
 
- #myModal, #restockModal, #pantryModal {
+
+ #myModal, #restockModal, #pantryModal, #reviewModal {
    margin-top: 100px;
  }
 
@@ -179,3 +174,46 @@ button:focus {
   font-size: 25px;
   background: transparent !important;
 }
+
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) {
+  .title{
+      font-size: 30px;
+      color: #314F40;
+      margin-top: 200px;
+      background: rgba(170,202,151,.9);
+  }
+ }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+
+  .title{
+      font-size: 50px;
+      color: #314F40;
+      margin-top: 200px;
+      background: rgba(170,202,151,.9);
+  }
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+  .title{
+      font-size: 70px;
+      color: #314F40;
+      margin-top: 200px;
+      background: rgba(170,202,151,.9);
+  }
+
+ }
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+
+
+ }

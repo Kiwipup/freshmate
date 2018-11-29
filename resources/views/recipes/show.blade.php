@@ -5,11 +5,12 @@
 <div class="row flex-center">
 
 <div id="recipeShow" class="card ml-3 mt-3">
-  <div class="card-header text-center">
+  <div class="card-header text-center bg-transparent">
     <div class="row">
       <div class="col-4 mr-5 ml-3">
         <div class="ml-5">
       <h3>{{$recipe->title}}</h3>
+      <hr>
       <p>Recipe By: {{$recipe->author}}</p>
       <p>"{!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}"</p>
     </div>
@@ -74,6 +75,47 @@
   </div>
   <div class="card-footer bg-transparent">
     <h3 class="ml-5 mb-3"><u>Reviews</u></h3>
+    <button type="button" class="btn btn-success mb-5 ml-5 " data-toggle="modal" data-target="#reviewModal">Review this recipe<i class="fas fa-check"></i></button>
+    <!-- foreach will go here-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="reviewModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form id="reviewModalForm" class="form clearfix p-3 mt-3" action="/recipes/{{ $recipe->id }}/reviews" method="post">
+                @csrf
+                <div class="form-group">
+                    <label for="review" class="font-weight-bold">Your Review</label>
+                    <textarea type="text" class="form-control" id="review" name="review" placeholder="Did you make any changes? Would you make this again?" ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success float-left">Save</button>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4 mr-5 ml-3">
+        <div class="ml-5">
+          <span>author</span><span>helpful?</span>
+          <hr>
+          <p>created at</p>
+          <p>blah blah blah</p>
+        </div>
+    </div>
   </div>
+</div>
 </div>
 @endsection

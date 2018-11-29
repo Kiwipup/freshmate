@@ -13,7 +13,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -23,7 +23,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -32,9 +32,15 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $recipe_id)
     {
-        //
+      $review = new \App\Review;
+      $review->user_id = \Auth::id();
+      $review->author = \Auth::user()->username;
+      $review->recipe_review_id = $recipe_id;
+      $review->review_text = $request->input('review');
+      $review->save();
+      return redirect("/recipes/{$review->recipe_review_id}");
     }
 
     /**
@@ -43,9 +49,9 @@ class ReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($recipe_id, $review_id)
     {
-        //
+        return redirect("/recipes/$recipe_id");
     }
 
     /**

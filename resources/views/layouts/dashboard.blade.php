@@ -12,7 +12,7 @@
         <a class="inner-nav nav-link" href="/pantry">Inventory</a>
       </li>
       <li class="list-inline-item nav-item">
-        <a class="inner-nav nav-link" href="/restock">Restock List</a>
+        <a class="inner-nav nav-link" href="/restock">Shopping List</a>
       </li>
       <li class="list-inline-item nav-item">
         <a class="inner-nav nav-link" href="/recipes">Your Recipes</a>
