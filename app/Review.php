@@ -12,7 +12,7 @@ class Review extends Model
   }
 
   public function recipe() {
-      return $this->belongsTo('App\Recipe', 'recipe_review_id', 'id');
+      return $this->belongsTo('App\Recipe', 'recipe_id', 'id');
 
   }
 }

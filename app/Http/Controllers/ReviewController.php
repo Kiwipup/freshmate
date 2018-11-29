@@ -13,7 +13,6 @@ class ReviewController extends Controller
      */
     public function index()
     {
-
     }
 
     /**
@@ -34,13 +33,13 @@ class ReviewController extends Controller
      */
     public function store(Request $request, $recipe_id)
     {
-      $review = new \App\Review;
-      $review->user_id = \Auth::id();
-      $review->author = \Auth::user()->username;
-      $review->recipe_review_id = $recipe_id;
-      $review->review_text = $request->input('review');
-      $review->save();
-      return redirect("/recipes/{$review->recipe_review_id}");
+      $reviews = new \App\Review;
+      $reviews->user_id = \Auth::id();
+      $reviews->author = \Auth::user()->username;
+      $reviews->recipe_id = $recipe_id;
+      $reviews->review_text = $request->input('review');
+      $reviews->save();
+      return redirect("/recipes/{$reviews->recipe_id}");
     }
 
     /**

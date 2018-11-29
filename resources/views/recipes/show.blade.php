@@ -2,8 +2,8 @@
 
 
 @section('recipeshow')
-<div class="row flex-center">
-
+<div class="flex-center">
+<div class="col-lg-8 col-md-12 col-sm-12">
 <div id="recipeShow" class="card ml-3 mt-3">
   <div class="card-header text-center bg-transparent">
     <div class="row">
@@ -15,17 +15,18 @@
       <p>"{!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}"</p>
     </div>
     </div>
-    <div class="col-5 ml-5">
+    <div class="card-img-top">
   <img class="img-fluid" src="{{$recipe->image}}" alt="Card image cap">
 
   </div>
   </div>
   </div>
-    <div class="card-body">
-      <h3 class="ml-5 mb-3"><u>Ingredients</u></h3>
-      <div class="col-4 ml-5">
+    <div class="card-body row">
+      <div class="col-lg-4 col-md-8 col-sm-8 ml-5">
+      <h3 class="mb-3"><u>Ingredients</u></h3>
+
       @foreach($recipe->ingredients as $ingredient)
-      <div class="row">
+      <div class="row border-bottom border-dotted">
         <span class="mr-3"><button id="addButton" type="button" class="btn btn-sm" data-toggle="modal" data-target="#addIngredient"><i class="fas fa-plus-circle"></i></button></span> <p>{{$ingredient}}</p>
 
     </div>
@@ -68,8 +69,9 @@
 
   </div>
   <hr>
-  <h3 class="ml-5 mb-3"><u>Directions</u></h3>
-  <div class="col-6 ml-4">
+  <div class="col-lg-4 col-md-8 col-sm-8 mr-5">
+  <h3 class="mb-3"><u>Directions</u></h3>
+
     {{$recipe->instructions}}
   </div>
   </div>
@@ -107,15 +109,32 @@
     </div>
 
     <div class="row">
+      @foreach($recipe->reviews()->orderBy('updated_at', 'desc')->get() as $review)
+
       <div class="col-4 mr-5 ml-3">
         <div class="ml-5">
-          <span>author</span><span>helpful?</span>
+          <p>{{$review->author}}</p>
+          <p>{{$review->helpful}}</p>
           <hr>
-          <p>created at</p>
-          <p>blah blah blah</p>
+          <p>{{$review->created_at}}</p>
+          <p>{{$review->review_text}}</p>
         </div>
     </div>
+
+    @endforeach
   </div>
+    @if ($recipe->reviews()->count() == 0)
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-3 empty text-center p-2 font-weight-light">
+          <p class="pt-4">There are no reviews yet for this recipe...</p>
+          <p >Click the "Review this recipe" button to make a review!</p>
+      </div>
+    </div>
+  @endif
+
+</div>
+
+</div>
 </div>
 </div>
 @endsection

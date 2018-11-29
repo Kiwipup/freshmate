@@ -21,8 +21,8 @@ class CreateReviewsTable extends Migration
         $table->unsignedInteger('helpful')->default(0);
         $table->unsignedInteger('user_id');
         $table->foreign('user_id')->references('id')->on('users');
-        $table->unsignedInteger('recipe_review_id');
-        $table->foreign('recipe_review_id')->references('id')->on('recipes');
+        $table->unsignedInteger('recipe_id');
+        $table->foreign('recipe_id')->references('id')->on('recipes');
         $table->timestamps();
       });
     }
