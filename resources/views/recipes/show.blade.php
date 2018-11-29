@@ -3,17 +3,17 @@
 
 @section('recipeshow')
 <div class="flex-center">
-<div class="col-lg-8 col-md-12 col-sm-12">
+<div class="col-lg-10 col-md-12 col-sm-12">
 <div id="recipeShow" class="card ml-3 mt-3">
   <div class="card-header text-center bg-transparent">
     <div class="row">
-      <div class="col-4 mr-5 ml-3">
-        <div class="ml-5">
-      <h3>{{$recipe->title}}</h3>
+      <div class="col-10 text-center">
+
+      <h1>{{$recipe->title}}</h1>
       <hr>
       <p>Recipe By: {{$recipe->author}}</p>
       <p>"{!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}"</p>
-    </div>
+
     </div>
     <div class="card-img-top">
   <img class="img-fluid" src="{{$recipe->image}}" alt="Card image cap">
@@ -22,11 +22,11 @@
   </div>
   </div>
     <div class="card-body row">
-      <div class="col-lg-4 col-md-8 col-sm-8 ml-5">
-      <h3 class="mb-3"><u>Ingredients</u></h3>
+      <div id="ingredients" class="col-lg-4 col-md-8 col-sm-8">
+      <h3 class="mb-3">Ingredients</h3>
 
       @foreach($recipe->ingredients as $ingredient)
-      <div class="row border-bottom border-dotted">
+      <div id="ingredientBorder" class="row">
         <span class="mr-3"><button id="addButton" type="button" class="btn btn-sm" data-toggle="modal" data-target="#addIngredient"><i class="fas fa-plus-circle"></i></button></span> <p>{{$ingredient}}</p>
 
     </div>
@@ -69,14 +69,15 @@
 
   </div>
   <hr>
-  <div class="col-lg-4 col-md-8 col-sm-8 mr-5">
-  <h3 class="mb-3"><u>Directions</u></h3>
+  <div id="directions" class="col-lg-4 col-md-8 col-sm-8">
+  <h3 class="mb-3">Directions</h3>
 
     {{$recipe->instructions}}
   </div>
   </div>
-  <div class="card-footer bg-transparent">
-    <h3 class="ml-5 mb-3"><u>Reviews</u></h3>
+
+    <h3 class="ml-5 mt-3">Reviews ({{$recipe->reviews()->count()}}) <i class="far fa-comments"></i></h3>
+    <hr>
     <button type="button" class="btn btn-success mb-5 ml-5 " data-toggle="modal" data-target="#reviewModal">Review this recipe<i class="fas fa-check"></i></button>
     <!-- foreach will go here-->
 
@@ -132,7 +133,7 @@
     </div>
   @endif
 
-</div>
+
 
 </div>
 </div>

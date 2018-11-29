@@ -10629,6 +10629,19 @@ button:focus {
   background: transparent !important;
 }
 
+#ingredientBorder {
+  border-bottom-style: dotted;
+  border-color: #ccc;
+  border-width: 1px;
+}
+
+#directions > h3,
+#ingredients > h3 {
+  border-bottom-style: dotted;
+  border-color: #ccc;
+  border-width: 3px;
+}
+
 /* Small devices (landscape phones, 576px and up)*/
 
 @media (min-width: 576px) {
@@ -10637,6 +10650,14 @@ button:focus {
     color: #314F40;
     margin-top: 200px;
     background: rgba(170, 202, 151, 0.9);
+  }
+
+  #directions {
+    margin-left: 100px;
+  }
+
+  #ingredients {
+    margin-left: 100px;
   }
 }
 
@@ -10649,6 +10670,14 @@ button:focus {
     margin-top: 200px;
     background: rgba(170, 202, 151, 0.9);
   }
+
+  #directions {
+    margin-right: 100px;
+  }
+
+  #ingredients {
+    margin-left: 100px;
+  }
 }
 
 /* Large devices (desktops, 992px and up)*/
@@ -10659,6 +10688,14 @@ button:focus {
     color: #314F40;
     margin-top: 200px;
     background: rgba(170, 202, 151, 0.9);
+  }
+
+  #directions {
+    margin-right: 40px;
+  }
+
+  #ingredients {
+    margin-left: 40px;
   }
 }
 
