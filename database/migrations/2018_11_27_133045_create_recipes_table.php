@@ -22,7 +22,7 @@ class CreateRecipesTable extends Migration
           $table->string('description', 500);
           $table->string('prep_time', 10);
           $table->string('cook_time', 10);
-          $table->json('ingredients');
+          $table->string('ingredients');
           $table->string('instructions', 1000000);
           $table->unsignedInteger('upvotes')->default(0);
           $table->unsignedInteger('user_id');

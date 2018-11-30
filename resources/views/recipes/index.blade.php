@@ -47,7 +47,7 @@
         <div class="form-group multiple-form-group" data-max=50>
 				<label>Ingredients</label>
 
-				<div class="form-group input-group" id="ingredients">
+				<div class="form-group input-group" id="ingredientsAdder">
 					<input type="text" name="ingredients[]" class="form-control" >
 						<span class="input-group-btn"><button type="button" class="btn btn-default btn-add">+
 						</button></span>

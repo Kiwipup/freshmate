@@ -1,11 +1,11 @@
 @extends('layouts.dashboard')
 
 @section('dashcontent')
-@foreach ($recipes as $recipe)
 
 
-@foreach($items as $item)
-@if ($item == $ingredients)
+
+@foreach($suggestions as $suggestion)
+
 <div class="row mt-4 flex-center">
 
         <div class="col-3 card ml-3 mt-3">
@@ -14,31 +14,18 @@
 
             <div class="card-header">
 
-            {{$recipe->title}}
+            {{$suggestion->title}}
           </div>
             <div class="card-body">
-            {!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
+            {!! $suggestion->description ? $suggestion->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
           </div>
           <div class="card-footer bg-transparent">
-            <p>Last Updated: {{$recipe-> updated_at}}</p>
+            <p>Last Updated: {{$suggestion-> updated_at}}</p>
+            <p>Made with love by: {{$suggestion-> author}}</p>
           </div>
         </div>
-        @else
-
-
-
-            <div class="empty text-center p-2 font-weight-light">
-                <p class="pt-4">We could not find any recipes with ingredients matching items in your inventory at this time. :(</p>
-
-            </div>
-
-            @endif
-
-
-
-@endforeach
-
 
 @endforeach
 </div>
+
 @endsection

@@ -31,6 +31,18 @@
                 Home
             </a>
 
+              <form action="/recipes/search" method="POST" role="search">
+              {{ csrf_field() }}
+              <div class="input-group">
+                  <input type="text" class="form-control" name="q"
+                      placeholder="Search recipes"> <span class="input-group-btn">
+                      <button type="submit" class="btn btn-success">
+                          <span><i class="fas fa-search"></i></span>
+                      </button>
+                  </span>
+              </div>
+            </form>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>

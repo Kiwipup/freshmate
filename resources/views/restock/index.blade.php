@@ -30,7 +30,7 @@
       @if (Auth::user()->restocks->count() == 0)
 
         <div class="empty text-center p-2 font-weight-light">
-            <p class="pt-4">Your Restock list is empty...</p>
+            <p class="pt-4">Your shopping list is empty...</p>
             <p >Click the "Add Item" button to get started!</p>
         </div>
 

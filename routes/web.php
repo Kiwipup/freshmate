@@ -11,17 +11,28 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
 $recipes = DB::table('recipes')->orderBy('title', 'ascending')->get();
 return view('welcome', compact('recipes'));
 });
 
+Route::any('recipes/search',function(Request $request){
+    $q = $request->input( 'q' );
+    $recipes = DB::table('recipes')->where('title','LIKE','%'. $q .'%')->orWhere('ingredients','LIKE','%'. $q .'%')->get();
+
+        return view('/recipes/search', compact('recipes', 'q'));
+
+});
+
+
 Route::get('/pantry/suggestions', function () {
-  $recipes = DB::table('recipes')->orderBy('updated_at', 'desc')->get();
-  $ingredients = DB::table('recipes')->select('ingredients')->get();
-  $ingredients->toArray();
-  $items = DB::table('inventories')->select('item')->where('user_id', \Auth::id())->get()->all();
-  return view('/pantry/suggestions', compact('recipes', 'ingredients', 'items'));
+  $inventory = DB::table('inventories')->select('item')->where('user_id', \Auth::id())->get();
+  $suggestions = DB::table('recipes')->whereIn('ingredients','LIKE','%'. $inventory .'%')->get();
+
+
+  return view('/pantry/suggestions', compact('suggestions', 'inventory'));
 });
 
 Auth::routes();

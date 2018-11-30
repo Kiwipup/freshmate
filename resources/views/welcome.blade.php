@@ -59,7 +59,7 @@
                 <div class="col-12">
                 <div class="text-left">
                   <div class="row mt-4 flex-center">
-                  @foreach (Auth::user()->recipes as $recipe)
+                  @foreach ($recipes as $recipe)
 
 
                           <div class="col-lg-5 col-md-5 col-sm-12 card ml-3 mt-3">
