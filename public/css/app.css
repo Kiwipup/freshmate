@@ -10471,10 +10471,6 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }*/
 
-#reviews {
-  color: black !important;
-}
-
 .page {
   margin-top: 100px;
   width: 100%;
@@ -10597,6 +10593,11 @@ body.pretty2 {
 .empty {
   background: rgba(163, 105, 95, 0.8);
   font-weight: bold;
+  color: #FEAD77;
+}
+
+label {
+  color: #FEAD77;
 }
 
 #dashboard-nav {
@@ -10637,6 +10638,15 @@ button:focus {
   border-bottom-style: dotted;
   border-color: #ccc;
   border-width: 3px;
+}
+
+#reviews {
+  color: black !important;
+}
+
+.review {
+  color: black !important;
+  background-color: #ccc !important;
 }
 
 /* Small devices (landscape phones, 576px and up)*/

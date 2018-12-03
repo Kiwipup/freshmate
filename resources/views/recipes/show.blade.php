@@ -120,7 +120,14 @@
 
       </div>
     </div>
-
+    @if ($recipe->reviews()->count() == 0)
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-3 empty text-center p-2 font-weight-light">
+          <p class="pt-4">There are no reviews yet for this recipe...</p>
+          <p >Click the "Review this recipe" button to make a review!</p>
+      </div>
+    </div>
+  @else
     <div id="reviews" class="row justify-content-center">
       @foreach($recipe->reviews()->orderBy('updated_at', 'desc')->get() as $review)
 
@@ -135,14 +142,8 @@
 
     @endforeach
   </div>
-    @if ($recipe->reviews()->count() == 0)
-    <div class="row d-flex justify-content-center">
-      <div class="col-lg-4 col-md-6 col-sm-12 mb-3 empty text-center p-2 font-weight-light">
-          <p class="pt-4">There are no reviews yet for this recipe...</p>
-          <p >Click the "Review this recipe" button to make a review!</p>
-      </div>
-    </div>
   @endif
+
 
 
 

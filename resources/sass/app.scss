@@ -12,9 +12,7 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }*/
-#reviews {
-  color: black !important;
-}
+
 
 
 .page {
@@ -145,7 +143,13 @@ body.pretty2 {
 #dashboard-nav, #addForm, #addFormTwo, #addRecipe, .empty {
   background: rgba(163,105,95,.8);
   font-weight: bold;
+  color: #FEAD77;
 
+
+}
+
+label {
+  color: #FEAD77;
 }
 
 
@@ -189,7 +193,14 @@ button:focus {
   border-width: 3px;
 }
 
+#reviews {
+  color: black !important;
+}
 
+.review {
+  color: black !important;
+  background-color: #ccc !important;
+}
 /* Small devices (landscape phones, 576px and up)*/
 
 @media (min-width: 576px) {
