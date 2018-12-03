@@ -10646,18 +10646,10 @@ button:focus {
 
 @media (min-width: 576px) {
   .title {
-    font-size: 30px;
+    font-size: 50px;
     color: #314F40;
     margin-top: 200px;
     background: rgba(170, 202, 151, 0.9);
-  }
-
-  #directions {
-    margin-left: 100px;
-  }
-
-  #ingredients {
-    margin-left: 100px;
   }
 }
 
@@ -10665,14 +10657,14 @@ button:focus {
 
 @media (min-width: 768px) {
   .title {
-    font-size: 50px;
+    font-size: 70px;
     color: #314F40;
     margin-top: 200px;
     background: rgba(170, 202, 151, 0.9);
   }
 
   #directions {
-    margin-right: 100px;
+    margin-left: 100px;
   }
 
   #ingredients {
@@ -10691,11 +10683,11 @@ button:focus {
   }
 
   #directions {
-    margin-right: 40px;
+    margin-right: 60px;
   }
 
   #ingredients {
-    margin-left: 40px;
+    margin-left: 60px;
   }
 }
 

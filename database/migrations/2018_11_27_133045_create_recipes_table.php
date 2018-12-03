@@ -18,12 +18,12 @@ class CreateRecipesTable extends Migration
           $table->string('title', 250);
           $table->string('author');
           $table->foreign('author')->references('username')->on('users');
-          $table->string('image', 250);
+          $table->string('image');
           $table->string('description', 500);
           $table->string('prep_time', 10);
           $table->string('cook_time', 10);
           $table->string('ingredients');
-          $table->string('instructions', 1000000);
+          $table->longText('instructions');
           $table->unsignedInteger('upvotes')->default(0);
           $table->unsignedInteger('user_id');
           $table->foreign('user_id')->references('id')->on('users');

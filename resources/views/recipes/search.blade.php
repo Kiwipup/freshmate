@@ -3,6 +3,8 @@
 
 
 @section('content')
+<div class="row mt-4 flex-center">
+
 @if ($recipes->count() == 0)
 
   <div class="empty text-center p-2 font-weight-light">
@@ -14,7 +16,7 @@
 @foreach ($recipes as $recipe)
 
 
-        <div class="col-5 card ml-3 mt-3">
+        <div class="col-lg-4 col-md-8 col-sm-10 card ml-3 mt-3">
           <a href="/recipes/{{$recipe->id}}"><img class="card-img-top mt-2" src="{{$recipe->image}}" alt="Card image cap">
 
 
@@ -26,7 +28,7 @@
             {!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
           </div></a>
           <div class="card-footer bg-transparent">
-            <p>Last Updated: {{$recipe-> updated_at}}</p>
+            <p>Made with <i class="fas fa-heart"></i> by: {{$recipe-> author}}</p>
           </div>
         </div>
 
@@ -38,4 +40,5 @@
 
 
 @endforeach
+</div>
 @endsection

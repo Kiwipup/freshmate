@@ -47,7 +47,7 @@
               @method('DELETE')
               <button class="btn bg-transparent float-right" type="submit"><i class="text-danger fas fa-trash-alt"></i></button>
           </form>
-          <button type="button" class="btn btn-success mb-2" data-toggle="modal" data-target="#pantryModal">Add to Restock List <i class="fas fa-check"></i></button>
+          <button type="button" class="btn btn-success mb-2" data-toggle="modal" data-target="#pantryModal">Add to Shopping List <i class="fas fa-check"></i></button>
 
   <!-- Modal -->
   <div class="modal fade" id="pantryModal" role="dialog">
@@ -63,7 +63,7 @@
               @csrf
               <div class="form-group">
                   <label for="item_name" class="font-weight-bold">Item Name</label>
-                  <input type="text" class="form-control" id="modal_item_name" name="item_name" value="">
+                  <input type="text" class="form-control" id="modal_item_name" name="item_name" value="{{$item->item}}">
               </div>
               <div class="form-group">
                   <label for="item_description" class="font-weight-bold">Item Description (optional)</label>
@@ -93,7 +93,7 @@
             {!! $item->description ? $item->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
           </div>
           <div class="card-footer bg-transparent">
-            {!! $item->expiration_date ? "Expires: " . $item->expiration_date : '<span class="text-black-50">(No Expiration Date)</span>' !!}
+            {!! $item->expiration_date ? "Expires: " . $item->prettyUpdate() : '<span class="text-black-50">(No Expiration Date)</span>' !!}
             <p>Quantity: {{$item->quantity}}</p>
           </div>
         </div>

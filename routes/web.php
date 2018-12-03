@@ -27,12 +27,17 @@ Route::any('recipes/search',function(Request $request){
 });
 
 
-Route::get('/pantry/suggestions', function () {
-  $inventory = DB::table('inventories')->select('item')->where('user_id', \Auth::id())->get();
-  $suggestions = DB::table('recipes')->whereIn('ingredients','LIKE','%'. $inventory .'%')->get();
+Route::get('/suggestions', function () {
+  $inventory = DB::table('inventories')->select('item')->where('user_id', \Auth::id())->pluck('item');
+  $inventory2 = $inventory->toArray();
+
+  foreach($inventory2 as $item) {
+    $recipes = DB::table('recipes')->where('ingredients', 'LIKE','%'. $item .'%')->orWhere('title','LIKE','%'. $item .'%')->get();
+  }
 
 
-  return view('/pantry/suggestions', compact('suggestions', 'inventory'));
+  return view('/suggestions', compact('recipes'));
+
 });
 
 Auth::routes();

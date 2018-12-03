@@ -3,23 +3,25 @@
 
 @section('recipeshow')
 <div class="flex-center">
-<div class="col-lg-10 col-md-12 col-sm-12">
+<div class="col-lg-8 col-md-12 col-sm-12">
 <div id="recipeShow" class="card ml-3 mt-3">
   <div class="card-header text-center bg-transparent">
-    <div class="row">
-      <div class="col-10 text-center">
+    <div class="row jusitfy-content-center">
+      <div class="col-8 text-center">
 
       <h1>{{$recipe->title}}</h1>
       <hr>
-      <p>Recipe By: {{$recipe->author}}</p>
+      <p>Made with <i class="fas fa-heart"></i> by: {{$recipe-> author}}</p>
+      <p> Published: {{$recipe->prettyUpdate()}}</p>
       <p>"{!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}"</p>
 
     </div>
+  </div>
     <div class="card-img-top">
   <img class="img-fluid" src="{{$recipe->image}}" alt="Card image cap">
 
   </div>
-  </div>
+
   </div>
     <div class="card-body row">
       <div id="ingredients" class="col-lg-4 col-md-8 col-sm-8">
@@ -27,7 +29,7 @@
 
       @foreach($recipe->ingredients as $ingredient)
       <div id="ingredientBorder" class="row">
-        <span class="mr-3"><button id="addButton" type="button" class="btn btn-sm" data-toggle="modal" data-target="#addIngredient"><i class="fas fa-plus-circle"></i></button></span> <p>{{$ingredient}}</p>
+        <span class="mr-3"><button id="addButton" type="button" class="btn btn-sm" data-toggle="modal" data-target="#addIngredient"><i class="fas fa-plus-circle"></i></button></span> <p class="mt-2">{{$ingredient}}</p>
 
     </div>
     <!-- Modal -->
@@ -75,10 +77,16 @@
     {{$recipe->instructions}}
   </div>
   </div>
-
-    <h3 class="ml-5 mt-3">Reviews ({{$recipe->reviews()->count()}}) <i class="far fa-comments"></i></h3>
+    <div class="row">
+      <div class="col-5">
+    <h3 class="ml-5 mt-5">Reviews ({{$recipe->reviews()->count()}}) <i class="far fa-comments"></i></h3>
+      </div>
+      <div class="col-3">
+    <button type="button" class="btn btn-success mt-5" data-toggle="modal" data-target="#reviewModal">Review this recipe<i class="fas fa-check"></i></button>
+      </div>
+    </div>
     <hr>
-    <button type="button" class="btn btn-success mb-5 ml-5 " data-toggle="modal" data-target="#reviewModal">Review this recipe<i class="fas fa-check"></i></button>
+
     <!-- foreach will go here-->
 
     <!-- Modal -->
@@ -109,15 +117,15 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row justify-content-center">
       @foreach($recipe->reviews()->orderBy('updated_at', 'desc')->get() as $review)
 
-      <div class="col-4 mr-5 ml-3">
-        <div class="ml-5">
+      <div class="col-8 mb-3 bg-primary">
+        <div class="ml-2">
           <p>{{$review->author}}</p>
           <p>{{$review->helpful}}</p>
-          <hr>
-          <p>{{$review->created_at}}</p>
+
+          <p>{{$review->prettyUpdate()}}</p>
           <p>{{$review->review_text}}</p>
         </div>
     </div>

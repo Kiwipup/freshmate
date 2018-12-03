@@ -31,7 +31,7 @@
                 Home
             </a>
 
-              <form action="/recipes/search" method="POST" role="search">
+              <form class="ml-3" action="/recipes/search" method="POST" role="search">
               {{ csrf_field() }}
               <div class="input-group">
                   <input type="text" class="form-control" name="q"

@@ -37,14 +37,14 @@
             <input type="text" class="form-control" id="prep_time" name="prep_time" value="{{ old('prep_time') }}">
         </div>
         <div class="form-group">
-            <label for="cook_time" class="font-weight-bold">cook_time</label>
+            <label for="cook_time" class="font-weight-bold">Cook Time</label>
             <input type="text" class="form-control" id="recipe_name" name="cook_time" value="{{ old('cook_time') }}">
         </div>
         <div class="form-group">
             <label for="recipe_description" class="font-weight-bold">Recipe Description</label>
             <textarea type="text" class="form-control" id="recipe_description" name="description" placeholder="About this recipe..." >{{ old('description') }}</textarea>
         </div>
-        <div class="form-group multiple-form-group" data-max=50>
+        <div class="form-group multiple-form-group" data-max=100>
 				<label>Ingredients</label>
 
 				<div class="form-group input-group" id="ingredientsAdder">
@@ -75,7 +75,7 @@
 @foreach (Auth::user()->recipes as $recipe)
 
 
-        <div class="col-5 card ml-3 mt-3">
+        <div class="col-lg-3 col-md-5 col-sm-8 card ml-3 mt-3">
           <a href="/recipes/{{$recipe->id}}"><img class="card-img-top mt-2" src="{{$recipe->image}}" alt="Card image cap">
 
 
@@ -87,7 +87,7 @@
             {!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
           </div></a>
           <div class="card-footer bg-transparent">
-            <p>Last Updated: {{$recipe-> updated_at}}</p>
+            <p>Last Updated: {{$recipe->prettyUpdate2()}}</p>
           </div>
         </div>
 

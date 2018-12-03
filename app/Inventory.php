@@ -11,8 +11,16 @@ class Inventory extends Model
       return $this->belongsTo('App\User');
   }
 
+  public function prettyUpdate() {
+
+        $dt = new Carbon($this->expiration_date);
+        if ($dt->isToday()) {
+            return $dt->format('g:i:s a');
+        }
+        return $dt->format('n/j/y');
+
+    }
 
 
 
-    
 }

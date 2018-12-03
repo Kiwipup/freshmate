@@ -17,6 +17,7 @@
     <body class="pretty">
 
       <div id="nav" class="shrink flex-center full-height">
+
           @if (Route::has('login'))
               <div  class="top-right links">
                   @auth
@@ -74,7 +75,7 @@
                               {!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
                             </div></a>
                             <div class="card-footer bg-transparent">
-                              <p>By {{$recipe->author}}</p>
+                              <p>Made with <i class="fas fa-heart"></i> by: {{$recipe-> author}}</p>
                             </div>
                           </div>
 
