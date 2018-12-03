@@ -15,7 +15,7 @@
                       @endif
 
                       @if (session('status'))
-                          <div class="alert alert-{{ session('status_class') ? session('status_class') : 'success' }}" role="alert">
+                          <div class="mt-3 alert alert-{{ session('status_class') ? session('status_class') : 'success' }}" role="alert">
                               {{ session('status') }}
                           </div>
                       @endif
@@ -48,15 +48,20 @@
 				<label>Ingredients</label>
 
 				<div class="form-group input-group" id="ingredientsAdder">
-					<input type="text" name="ingredients[]" class="form-control" >
+					<input type="text" name="ingredients[]" class="form-control" value="{{ old('ingredients') }}">
 						<span class="input-group-btn"><button type="button" class="btn btn-default btn-add">+
 						</button></span>
 				</div>
 			</div>
-        <div class="form-group">
-            <label for="instructions" class="font-weight-bold">Instructions</label>
-            <textarea type="text" class="form-control" name="instructions" id="instructions" >{{ old('instructions') }}</textarea>
-        </div>
+      <div class="form-group multiple-form-group" data-max=100>
+      <label>Instructions (will be displayed in Steps)</label>
+
+      <div class="form-group input-group" id="instructionsAdder">
+        <input type="text" name="instructions[]" class="form-control" value="{{ old('instructions') }}">
+          <span class="input-group-btn"><button type="button" class="btn btn-default btn-add">+
+          </button></span>
+      </div>
+    </div>
 
         <button type="submit" class="btn btn-success float-left">Publish Recipe</button>
 

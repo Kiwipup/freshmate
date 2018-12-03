@@ -10471,6 +10471,10 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }*/
 
+#reviews {
+  color: black !important;
+}
+
 .page {
   margin-top: 100px;
   width: 100%;
@@ -10501,12 +10505,6 @@ a.text-dark:focus {
   transition: all ease .5s;
 }
 
-.card-header,
-.card-body,
-.card-footer {
-  color: #314F40 !important;
-}
-
 body.pretty {
   /* The image used */
   background: url("http://3.bp.blogspot.com/-y3k9nLOiUrg/UkUpx8kclzI/AAAAAAAADgs/YrWctVO3vmE/s1600/DSC_1975.JPG");
@@ -10535,7 +10533,6 @@ body.pretty2 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #FEAD77;
 }
 
 .links > a {

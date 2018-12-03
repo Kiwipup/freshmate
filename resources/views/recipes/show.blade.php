@@ -6,12 +6,12 @@
 <div class="col-lg-8 col-md-12 col-sm-12">
 <div id="recipeShow" class="card ml-3 mt-3">
   <div class="card-header text-center bg-transparent">
-    <div class="row jusitfy-content-center">
+    <div class="row justify-content-center">
       <div class="col-8 text-center">
 
-      <h1>{{$recipe->title}}</h1>
+      <h1>{{$recipe->title()}}</h1>
       <hr>
-      <p>Made with <i class="fas fa-heart"></i> by: {{$recipe-> author}}</p>
+      <p>Made with <i class="text-danger fas fa-heart"></i> by: {{$recipe-> author}}</p>
       <p> Published: {{$recipe->prettyUpdate()}}</p>
       <p>"{!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}"</p>
 
@@ -29,7 +29,7 @@
 
       @foreach($recipe->ingredients as $ingredient)
       <div id="ingredientBorder" class="row">
-        <span class="mr-3"><button id="addButton" type="button" class="btn btn-sm" data-toggle="modal" data-target="#addIngredient"><i class="fas fa-plus-circle"></i></button></span> <p class="mt-2">{{$ingredient}}</p>
+        <div class="col-lg-3"><button id="addButton" type="button" class="btn btn-sm" data-toggle="modal" data-target="#addIngredient"><i class="fas fa-plus-circle"></i></button></div><div class="col-lg-9"><p class="mt-2">{{$ingredient}}</p></div>
 
     </div>
     <!-- Modal -->
@@ -74,7 +74,11 @@
   <div id="directions" class="col-lg-4 col-md-8 col-sm-8">
   <h3 class="mb-3">Directions</h3>
 
-    {{$recipe->instructions}}
+      @foreach($recipe->instructions as $instruction)
+      <div class="row">
+        <p>{{$instruction}}</p>
+      </div>
+      @endforeach
   </div>
   </div>
     <div class="row">
@@ -117,13 +121,12 @@
       </div>
     </div>
 
-    <div class="row justify-content-center">
+    <div id="reviews" class="row justify-content-center">
       @foreach($recipe->reviews()->orderBy('updated_at', 'desc')->get() as $review)
 
-      <div class="col-8 mb-3 bg-primary">
+      <div class="review col-8 mb-3">
         <div class="ml-2">
           <p>{{$review->author}}</p>
-          <p>{{$review->helpful}}</p>
 
           <p>{{$review->prettyUpdate()}}</p>
           <p>{{$review->review_text}}</p>

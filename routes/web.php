@@ -30,13 +30,17 @@ Route::any('recipes/search',function(Request $request){
 Route::get('/suggestions', function () {
   $inventory = DB::table('inventories')->select('item')->where('user_id', \Auth::id())->pluck('item');
   $inventory2 = $inventory->toArray();
+  $suggestions = collect([]);
+
 
   foreach($inventory2 as $item) {
-    $recipes = DB::table('recipes')->where('ingredients', 'LIKE','%'. $item .'%')->orWhere('title','LIKE','%'. $item .'%')->get();
+    $recipes = DB::table('recipes')->where('ingredients', 'LIKE','%'. $item .'%')->orWhere('title','LIKE','%'. $item .'%')->get()->all();
+    $suggestions = $suggestions->merge($recipes);
   }
 
+  $suggestions = $suggestions->unique();
 
-  return view('/suggestions', compact('recipes'));
+  return view('/suggestions', compact('suggestions'));
 
 });
 

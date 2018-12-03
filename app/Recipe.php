@@ -10,6 +10,7 @@ class Recipe extends Model
 
   protected $casts = [
     'ingredients' => 'array',
+    'instructions' => 'array',
 
 ];
 
@@ -41,4 +42,12 @@ class Recipe extends Model
           return $dt->format('n/j/y \\a\\t g:i:s a');
 
       }
+
+      public function title() {
+
+            $title = strtoupper($this->title);
+
+            return $title;
+
+        }
 }

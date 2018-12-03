@@ -35,6 +35,7 @@ const app = new Vue({
 
 
 
+
 (function ($) {
     $(function () {
 

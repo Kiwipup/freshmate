@@ -3,6 +3,13 @@
 @section('dashcontent')
 <div class="d-flex justify-content-center">
 <div class="col-8">
+
+  @if (session('status'))
+      <div class="mt-3 alert alert-{{ session('status_class') ? session('status_class') : 'success' }}" role="alert">
+          {{ session('status') }}
+      </div>
+  @endif
+
 <a class="btn btn-success mb-2 mt-2" data-toggle="collapse" href="#addForm">Add Item <i class="ml-2 fas fa-plus"></i></a>
 
 <form id="addForm" class="collapse form clearfix p-3 mt-3" action="" method="post">
@@ -104,4 +111,5 @@
 
 @endforeach
 </div>
+
 @endsection

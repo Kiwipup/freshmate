@@ -75,7 +75,7 @@
                               {!! $recipe->description ? $recipe->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
                             </div></a>
                             <div class="card-footer bg-transparent">
-                              <p>Made with <i class="fas fa-heart"></i> by: {{$recipe-> author}}</p>
+                              <p>Made with <i class="text-danger fas fa-heart"></i> by: {{$recipe-> author}}</p>
                             </div>
                           </div>
 
