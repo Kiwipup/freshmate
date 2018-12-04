@@ -10622,7 +10622,8 @@ button:focus {
   min-width: 100%;
 }
 
-#addButton {
+#addButton,
+#expiredNotify {
   font-size: 25px;
   background: transparent !important;
 }
@@ -10695,6 +10696,10 @@ button:focus {
 
   #ingredients {
     margin-left: 60px;
+  }
+
+  #recipeCard {
+    max-height: 300px;
   }
 }
 

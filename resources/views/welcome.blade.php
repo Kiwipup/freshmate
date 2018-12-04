@@ -64,7 +64,7 @@
 
 
                           <div class="col-lg-5 col-md-5 col-sm-12 card ml-3 mt-3">
-                            <a href="/recipes/{{$recipe->id}}"><img class="card-img-top mt-2" src="{{$recipe->image}}" alt="Card image cap">
+                            <a href="/recipes/{{$recipe->id}}"><img id="recipeCard" class="card-img-top mt-2 img-fluid" src="{{$recipe->image}}" alt="Card image cap">
 
 
                               <div class="card-header">
