@@ -46,9 +46,11 @@
     @endif
   @foreach (Auth::user()->items as $item)
 
-
-        <div class="col-lg-3 col-md-5 col-sm-12 card ml-3 mt-3 border {$item->expiration_date ? border-success : border-danger}">
-
+        @if($item->is_expired === true)
+        <div class="col-lg-3 col-md-5 col-sm-12 card ml-3 mt-3 border border-danger">
+          @else
+        <div class="col-lg-3 col-md-5 col-sm-12 card ml-3 mt-3 border border-success">
+          @endif
           <form action="/pantry/{{ $item->id }}" method="POST">
               @csrf
               @method('DELETE')
@@ -91,8 +93,11 @@
 
     </div>
   </div>
-            <div id="card_item_name" class="card-header {$item->expiration_date ? bg-success : bg-danger}">
-
+            @if($item->is_expired)
+            <div id="card_item_name" class="card-header bg-danger">
+              @else
+            <div id="card_item_name" class="card-header bg-success">
+              @endif
             {{$item->item}}
           </div>
 

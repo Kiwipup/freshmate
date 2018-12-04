@@ -7,6 +7,13 @@ use Carbon\Carbon;
 
 class Inventory extends Model
 {
+
+  protected $dates = [
+       'expiration_date',
+
+   ];
+
+
   public function user() {
       return $this->belongsTo('App\User');
   }
@@ -15,7 +22,7 @@ class Inventory extends Model
 
         $dt = new Carbon($this->expiration_date);
         if ($dt->isToday()) {
-            return $dt->format('g:i:s a');
+            return 'Today';
         }
         return $dt->format('n/j/y');
 
