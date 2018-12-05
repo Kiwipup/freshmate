@@ -21,7 +21,7 @@
 
 
         <div class="col-lg-3 col-md-5 col-sm-8 card ml-3 mt-3">
-          <img class="card-img-top mt-2" src="{{$suggestion->image}}" alt="Card image cap">
+          <a href="/recipes/{{$recipe->id}}"><img class="card-img-top mt-2" src="{{$suggestion->image}}" alt="Card image cap">
 
 
             <div class="card-header">
@@ -31,6 +31,7 @@
             <div class="card-body">
             {!! $suggestion->description ? $suggestion->description : '<span class="text-black-50">(No Description)</span>' !!}<br />
           </div>
+        </div>
           <div class="card-footer bg-transparent">
             <p>Made with <i class="text-danger fas fa-heart"></i> by: {{$suggestion-> author}}</p>
           </div>
