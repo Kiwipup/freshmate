@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header bg-success">{{ __('Create an account and lets get cooking!') }} <i class="fas fa-utensil-spoon"></i></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
