@@ -48,8 +48,8 @@
                 </div>
               </div>
               <div class="title-icon flex-center">
-                <div class="col-lg-3 col-md-5 col-sm-12">
-                <h3 class="bg-success">Browse our recipes</h3>
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                <h3 class="bg-success">Browse our recipes or <a href="{{ route('login') }}">log in</a> to start managing your virtual pantry!</h3>
                 <a href="#publicRecipes" ><i class="fas fa-arrow-circle-down"></i></a>
               </div>
               </div>
